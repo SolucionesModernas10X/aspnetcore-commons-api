@@ -18,7 +18,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Dev10x.AspnetCore.Commons.Api.Exceptions
 {
 
-    internal class ErrorDetails : ProblemDetails
+    public class ErrorDetails : ProblemDetails
     {
 
         public DateTimeOffset Date { get; set; }

@@ -1,35 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <PackageVersion>0.1</PackageVersion>
-    <Authors>Dev10x</Authors>
-    <Description>Dev10x.AspnetCore.Commons.Api</Description>
-    <Owners>Soluciones Modernas 10x</Owners>
-    <Title>Commons API</Title>
-    <Copyright>Soluciones Modernas 10x, under the Apache License, Version 2.0</Copyright>
-    <PackageIconUrl>https://avatars.githubusercontent.com/t/6092804?s=280&amp;v=4</PackageIconUrl>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://github.com/SolucionesModernas10X/aspnetcore-commons-api</PackageProjectUrl>
-    <PackageTags>Commons API AspnetCore</PackageTags>
-    <PackageId>Dev10x.AspnetCore.Commons.Api</PackageId>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Converters\" />
-    <None Remove="Exceptions\" />
-    <None Remove="Hellang.Middleware.ProblemDetails" />
-    <None Remove="Microsoft.AspNetCore.Mvc.Core" />
-    <None Remove="Helpers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Converters\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Helpers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<PackageVersion>0.1.1</PackageVersion>
+		<Authors>Dev10x</Authors>
+		<Description>Utility classes for developing a rest API with the Dev10x framework</Description>
+		<Owners>Soluciones Modernas 10x</Owners>
+		<Title>Commons API</Title>
+		<Copyright>Soluciones Modernas 10x, under the Apache License, Version 2.0</Copyright>
+		<PackageIconUrl>https://avatars.githubusercontent.com/t/6092804?s=280&amp;v=4</PackageIconUrl>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageProjectUrl>https://github.com/SolucionesModernas10X/aspnetcore-commons-api</PackageProjectUrl>
+		<PackageTags>Commons API AspnetCore Rest</PackageTags>
+		<PackageId>Dev10x.AspnetCore.Commons.Api</PackageId>
+		<ReleaseVersion>0.1.1</ReleaseVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Converters\" />
+		<None Remove="Exceptions\" />
+		<None Remove="Hellang.Middleware.ProblemDetails" />
+		<None Remove="Microsoft.AspNetCore.Mvc.Core" />
+		<None Remove="Helpers\" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Converters\" />
+		<Folder Include="Exceptions\" />
+		<Folder Include="Helpers\" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+	</ItemGroup>
 </Project>
