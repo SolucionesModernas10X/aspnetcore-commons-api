@@ -19,12 +19,12 @@ using System.Text.Json.Serialization;
 
 namespace Dev10x.AspnetCore.Commons.Api.Converters
 {
-    public class JsonDateTimeConverter : JsonConverter<DateTime>
+    public class JsonDateTimeOffsetConverter : JsonConverter<DateTimeOffset>
     {
 
         private readonly string _dateFormat;
 
-        public JsonDateTimeConverter(string dateFormat)
+        public JsonDateTimeOffsetConverter(string dateFormat)
         {
             _dateFormat = dateFormat;
         }
@@ -32,12 +32,12 @@ namespace Dev10x.AspnetCore.Commons.Api.Converters
         /// <summary>
         /// Constructor with default date time format (dd/MM/yyyy)
         /// </summary>
-        public JsonDateTimeConverter()
+        public JsonDateTimeOffsetConverter()
         {
-            _dateFormat = "dd/MM/yyyy";
+            _dateFormat = "dd/MM/yyyy HH:mm:ss";
         }
 
-        public override DateTime Read(
+        public override DateTimeOffset Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
             JsonSerializerOptions options) =>
@@ -46,7 +46,7 @@ namespace Dev10x.AspnetCore.Commons.Api.Converters
 
         public override void Write(
             Utf8JsonWriter writer,
-            DateTime value,
+            DateTimeOffset value,
             JsonSerializerOptions options) =>
             writer.WriteStringValue(value.ToString(
                 _dateFormat, CultureInfo.InvariantCulture));

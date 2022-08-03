@@ -19,35 +19,37 @@ using System.Text.Json.Serialization;
 
 namespace Dev10x.AspnetCore.Commons.Api.Converters
 {
-	public class JsonDateTimeConverter : JsonConverter<DateTime>
-	{
+    public class JsonDateTimeConverter : JsonConverter<DateTime>
+    {
 
-		private readonly string _dateFormat;
+        private readonly string _dateFormat;
 
-		public JsonDateTimeConverter(string dateFormat)
+        public JsonDateTimeConverter(string dateFormat)
         {
             _dateFormat = dateFormat;
-		}
-
-
-		public JsonDateTimeConverter()
-        {
-			_dateFormat = "dd/MM/yyyy";
         }
 
-		public override DateTime Read(
-			ref Utf8JsonReader reader,
-			Type typeToConvert,
-			JsonSerializerOptions options) =>
-			DateTime.ParseExact(reader.GetString(),
-				_dateFormat, CultureInfo.InvariantCulture);
+        /// <summary>
+        /// Constructor with default date time format (dd/MM/yyyy)
+        /// </summary>
+        public JsonDateTimeConverter()
+        {
+            _dateFormat = "dd/MM/yyyy";
+        }
 
-		public override void Write(
-			Utf8JsonWriter writer,
-			DateTime value,
-			JsonSerializerOptions options) =>
-			writer.WriteStringValue(value.ToString(
-				_dateFormat, CultureInfo.InvariantCulture));
+        public override DateTime Read(
+            ref Utf8JsonReader reader,
+            Type typeToConvert,
+            JsonSerializerOptions options) =>
+            DateTime.ParseExact(reader.GetString(),
+                _dateFormat, CultureInfo.InvariantCulture);
 
-	}
+        public override void Write(
+            Utf8JsonWriter writer,
+            DateTime value,
+            JsonSerializerOptions options) =>
+            writer.WriteStringValue(value.ToString(
+                _dateFormat, CultureInfo.InvariantCulture));
+
+    }
 }
