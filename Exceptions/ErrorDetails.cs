@@ -17,10 +17,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Dev10x.AspnetCore.Commons.Api.Exceptions
 {
-
+    /// <summary>
+    /// Class that inherits from problemdetail and includes the date
+    /// </summary>
     public class ErrorDetails : ProblemDetails
     {
-
+        /// <summary>
+        /// Error DateTime
+        /// </summary>
         public DateTimeOffset Date { get; set; }
 
     }

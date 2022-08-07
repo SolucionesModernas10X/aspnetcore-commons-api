@@ -19,11 +19,18 @@ using System.Text.Json.Serialization;
 
 namespace Dev10x.AspnetCore.Commons.Api.Converters
 {
+    /// <summary>
+    /// DateTimeOffset format converter for json (des)seralization
+    /// </summary>
     public class JsonDateTimeOffsetConverter : JsonConverter<DateTimeOffset>
     {
 
         private readonly string _dateFormat;
 
+        /// <summary>
+        /// Constructor for a specific date time format
+        /// </summary>
+        /// <param name="dateFormat"></param>
         public JsonDateTimeOffsetConverter(string dateFormat)
         {
             _dateFormat = dateFormat;
@@ -37,6 +44,12 @@ namespace Dev10x.AspnetCore.Commons.Api.Converters
             _dateFormat = "dd/MM/yyyy HH:mm:ss";
         }
 
+        /// <summary>
+        /// DateTime deserialization
+        /// </summary>
+        /// <param name="reader">Utf8 Json Reader</param>
+        /// <param name="typeToConvert">Type to convert the value</param>
+        /// <param name="options">Json Serializer Options </param>
         public override DateTimeOffset Read(
             ref Utf8JsonReader reader,
             Type typeToConvert,
@@ -44,6 +57,12 @@ namespace Dev10x.AspnetCore.Commons.Api.Converters
             DateTime.ParseExact(reader.GetString(),
                 _dateFormat, CultureInfo.InvariantCulture);
 
+        /// <summary>
+        /// DateTime serialization
+        /// </summary>
+        /// <param name="writer">Utf8 Json Writer</param>
+        /// <param name="value">value to be Serialized</param>
+        /// <param name="options">Json Serializer Options</param>
         public override void Write(
             Utf8JsonWriter writer,
             DateTimeOffset value,

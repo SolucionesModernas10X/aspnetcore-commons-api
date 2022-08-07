@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net5.0</TargetFramework>
-		<PackageVersion>0.1.1</PackageVersion>
+		<TargetFramework>net6.0</TargetFramework>
+		<PackageVersion>0.1.2</PackageVersion>
 		<Authors>Dev10x</Authors>
-		<Description>Utility classes for developing a rest API with the Dev10x framework</Description>
+		<Description>Utility module that contains common classes for developing a REST API with the Dev10x framework.</Description>
 		<Owners>Soluciones Modernas 10x</Owners>
 		<Title>Commons API</Title>
 		<Copyright>Soluciones Modernas 10x, under the Apache License, Version 2.0</Copyright>
@@ -15,15 +15,8 @@
 		<PackageProjectUrl>https://github.com/SolucionesModernas10X/aspnetcore-commons-api</PackageProjectUrl>
 		<PackageTags>Commons API AspnetCore Rest</PackageTags>
 		<PackageId>Dev10x.AspnetCore.Commons.Api</PackageId>
-		<ReleaseVersion>0.1.1</ReleaseVersion>
+		<ReleaseVersion>0.1.2</ReleaseVersion>
 	</PropertyGroup>
-	<ItemGroup>
-		<None Remove="Converters\" />
-		<None Remove="Exceptions\" />
-		<None Remove="Hellang.Middleware.ProblemDetails" />
-		<None Remove="Microsoft.AspNetCore.Mvc.Core" />
-		<None Remove="Helpers\" />
-	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Converters\" />
 		<Folder Include="Exceptions\" />

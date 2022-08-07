@@ -17,24 +17,34 @@ using System.Runtime.Serialization;
 
 namespace Dev10x.AspnetCore.Commons.Api.Exceptions
 {
-	[Serializable]
-	public class ApiException : Exception
-	{
+    /// <summary>
+    /// Exception that includes StatusCode for api rest operations
+    /// </summary>
+    [Serializable]
+    public class ApiException : Exception
+    {
+        /// <summary>
+        /// Http Status Code
+        /// </summary>
+        public int StatusCode { get; set; }
 
-		public int StatusCode { get; set; }
+        /// <summary>
+        /// Constructor for exception with custom message and status code
+        /// </summary>
+        /// <param name="statusCode"></param>
+        /// <param name="message"></param>
+        public ApiException(int statusCode, string message) : base(message)
+        {
+            StatusCode = statusCode;
+        }
 
-		public ApiException(int statusCode, string message) : base(message)
-		{
-			StatusCode = statusCode;
-		}
+        protected ApiException(SerializationInfo info, StreamingContext context)
+        : base(info, context)
+        {
+        }
 
-		private ApiException()
-		{ }
+        private ApiException()
+        { }
 
-		protected ApiException(SerializationInfo info, StreamingContext context)
-		: base(info, context)
-		{
-		}
-
-	}
+    }
 }
